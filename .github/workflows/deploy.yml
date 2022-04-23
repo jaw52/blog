@@ -32,6 +32,8 @@ jobs:
 
       - name: Setup Hexo
         run: |
+          git config --global user.email "2135326728@qq.com"
+          git config --global user.name "jaw52"
           npm install hexo-cli -g
           npm install
           
