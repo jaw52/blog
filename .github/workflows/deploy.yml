@@ -25,14 +25,17 @@ jobs:
       # 在$GITHUB_WORKSPACE下检查您的存储库，以便您的job可以访问它
       - uses: actions/checkout@v3
 
-      - name: Setup Node.js 10.x
-        uses: actions/setup-node@master
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
         with:
-          node-version: "10.x"
+          node-version: '12'
 
-      - name: Setup Hexo Dependencies and Generate Public Files
+      - name: Setup Hexo
         run: |
           npm install hexo-cli -g
-          npm install yuque-hexo -g
           npm install
-          npm run start
+          
+      - name: Deploy
+        run: |
+          hexo clean
+          hexo deploy
