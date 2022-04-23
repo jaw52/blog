@@ -20,17 +20,19 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    # Steps表示将作为job一部分执行的任务序列
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # 在$GITHUB_WORKSPACE下检查您的存储库，以便您的job可以访问它
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Setup Node.js 10.x
+        uses: actions/setup-node@master
+        with:
+          node-version: "10.x"
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Setup Hexo Dependencies and Generate Public Files
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          npm install hexo-cli -g
+          npm install yuque-hexo -g
+          npm install
+          npm run start
