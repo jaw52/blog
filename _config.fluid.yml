@@ -7,5 +7,10 @@ index:
 post:
   banner_img: /img/banner_img.png
   banner_img_height: 70
+about:
+  name: "jaw"
+  intro: "this is my blog"
+  icons:
+    - { class: 'iconfont icon-github-fill', link: 'https://github.com/jaw52', tip: 'GitHub' }
 navbar:
   blog_title: jaw的博客
