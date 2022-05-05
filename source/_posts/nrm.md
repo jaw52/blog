@@ -1,6 +1,5 @@
 ---
 title: nrm
-banner_img: /img/banner_img.png
 tags:
 - npm
 categories: 
