@@ -35,7 +35,7 @@ npm init
 
 ## Demo
 
-![](img/image_YZWCc2zSo5.png)
+![](img/image_gCzkz_rJtT.png)
 
 我们需要发布的文件，在demo中的引入可以直接写成包名，duim会自动构建
 
