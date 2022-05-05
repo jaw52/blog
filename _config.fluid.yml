@@ -1,6 +1,8 @@
 index:
   slogan:
     enable: true
-    text: 清风月下池
+    text: 清风月下池 
+  banner_img: /img/banner_img.png
+  banner_img_height: 70
 navbar:
-  blog_title: jaw
+  blog_title: jaw的博客
