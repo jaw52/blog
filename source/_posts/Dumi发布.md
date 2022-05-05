@@ -1,5 +1,6 @@
 ---
 title: dumi
+banner_img: /img/banner_img.png
 tags:
 - dumi
 - umi

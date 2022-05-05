@@ -1,5 +1,6 @@
 ---
 title: dva
+banner_img: /img/banner_img.png
 tags:
 - umi
 - 第三方库
