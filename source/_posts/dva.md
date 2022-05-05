@@ -4,7 +4,9 @@ banner_img: /img/banner_img.png
 tags:
 - umi
 - 第三方库
-categories: 前端
+categories: 
+- 前端
+- umi
 ---
 # dva
 

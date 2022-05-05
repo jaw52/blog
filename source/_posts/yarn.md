@@ -3,7 +3,10 @@ title: yarn
 banner_img: /img/banner_img.png
 tags:
 - package.json
-categories: 前端
+- yarn
+categories: 
+- 前端
+- npm
 ---
 # yarn
 
