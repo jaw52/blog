@@ -1,6 +1,5 @@
 ---
 title: yarn
-banner_img: /img/banner_img.png
 tags:
 - package.json
 - yarn

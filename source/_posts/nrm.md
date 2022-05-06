@@ -1,6 +1,5 @@
 ---
 title: nrm
-banner_img: /img/banner_img.png
 tags:
 - npm
 categories: 
@@ -8,11 +7,9 @@ categories:
 - npm
 ---
 
-# nrm
-
-## nrm管理npm源
-
 一般在本地会安装多个npm源，可以使用nrm对其进行管理与切换。
+
+<!-- more -->
 
 相当于
 
