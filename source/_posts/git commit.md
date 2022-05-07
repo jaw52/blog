@@ -45,11 +45,11 @@ categories:
 
 # 格式化工具
 
-## Commitizen
+### Commitizen
 
 `commitizen/cz-cli`, 我们需要借助它提供的 git cz 命令替代我们的 git commit 命令, 帮助我们生成符合规范的 commit message.
 
-###  安装
+####  安装
 
 首先，全局安装
 
@@ -93,7 +93,7 @@ package.json中配置:
 
 ```
 
-## webstorm
+### webstorm
 
 webstorm本身就集成了一个图形化的git提交系统，为了方便我们可以下载一个`Git Commit Template`的插件，可以帮助我们提交格式化的信息
 
@@ -101,11 +101,13 @@ webstorm本身就集成了一个图形化的git提交系统，为了方便我们
 
 `commitlint`: 可以帮助我们 lint commit messages, 如果我们提交的不符合指向的规范, 直接拒绝提交
 
-安装:
+### 安装
 
 ```bash
 npm i -D @commitlint/config-conventional @commitlint/cli
 ```
+
+### 快速开始
 
 同时需要在项目目录下创建配置文件 `.commitlintrc.js`, 写入:
 
@@ -117,7 +119,6 @@ module.exports = {
 };
 
 ```
-
 在`gitHooks`增加配置，提交时便可检查提交信息
 
 ```json
@@ -127,7 +128,39 @@ module.exports = {
 },
 ```
 
+### 自定义Type
 
+以上会启用推荐配置，针对于前端项目，`type`可能不够，需要另外扩展
+
+```js
+module.exports = {
+  rules: {
+		'type-enum': [
+			2,
+			'always',
+			[
+				'build',
+				'chore',
+				'ci',
+				'docs',
+				'feat',
+				'fix',
+				'perf',
+				'refactor',
+				'revert',
+				'style',
+				'test',
+			],
+		],
+	},
+};
+```
+
+#### type-enum
+
+- **condition**: 0为`disable`，1为`warning`，2为`error`
+
+- **rule**:应用与否，可选`always`|`never`
 
 # 自动生成 CHANGELOG
 
@@ -158,7 +191,6 @@ package.json 配置，会按默认升级版本号更新`version`
 ### 第一个版本
 
 ```bash
-# npm run script
 npm run release -- --first-release
 ```
 
@@ -173,16 +205,16 @@ module.exports = {
     "types": [
       { "type": "feat", "section": "✨ Features | 新功能" },
       { "type": "fix", "section": "🐛 Bug Fixes | Bug 修复" },
-      { "type": "init", "section": "🎉 Init | 初始化" },
+      { "type": "init", "section": "🎉 Init | 初始化", "hidden": true  },
       { "type": "docs", "section": "✏️ Documentation | 文档" },
       { "type": "style", "section": "💄 Styles | 风格" },
       { "type": "refactor", "section": "♻️ Code Refactoring | 代码重构" },
       { "type": "perf", "section": "⚡ Performance Improvements | 性能优化" },
-      { "type": "test", "section": "✅ Tests | 测试" },
+      { "type": "test", "section": "✅ Tests | 测试", "hidden": true  },
       { "type": "revert", "section": "⏪ Revert | 回退", "hidden": true },
-      { "type": "build", "section": "📦‍ Build System | 打包构建" },
-      { "type": "chore", "section": "🚀 Chore | 构建/工程依赖/工具" },
-      { "type": "ci", "section": "👷 Continuous Integration | CI 配置" }
+      { "type": "build", "section": "📦‍ Build System | 打包构建", "hidden": true  },
+      { "type": "chore", "section": "🚀 Chore | 构建/工程依赖/工具", "hidden": true  },
+      { "type": "ci", "section": "👷 Continuous Integration | CI 配置", "hidden": true  }
     ]
   }
 ```
